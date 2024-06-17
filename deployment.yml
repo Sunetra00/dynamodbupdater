@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo
+  namespace: eksapp
+  labels:
+    app: dynamodbupdater
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dynamodbupdater
+  template:
+    metadata:
+      labels:
+        app: dynamodbupdater
+    spec:
+      containers:
+        - name: dynamodbupdater
+          image: 265083127752.dkr.ecr.ap-south-1.amazonaws.com/ecr-docker-repo-name:version-1
+          ports:
+            - containerPort: 80
