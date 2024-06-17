@@ -8,7 +8,6 @@ phases:
       - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
       - echo $REPOSITORY_URI
       - aws --version
-      - aws ecr get-login-password --region $AWS_DEFAULT_REGION 
       - docker login --username AWS --password-stdin 265083127752.dkr.ecr.ap-south-1.amazonaws.com
       - REPOSITORY_URI=265083127752.dkr.ecr.ap-south-1.amazonaws.com/ecr-docker-repo-name
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
