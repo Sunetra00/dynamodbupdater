@@ -4,7 +4,6 @@ phases:
   install:
     runtime-versions:
       java: corretto11
-      docker: 19
     commands:
       - echo Installing Maven...
       - apt-get update -y
