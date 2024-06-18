@@ -18,7 +18,6 @@ phases:
       - source ~/.bashrc
       - echo 'Check kubectl version'
       - kubectl version --client
-      - kubectl get svc
   pre_build:
     commands:
       - echo Logging in to Amazon EKS...
