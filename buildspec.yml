@@ -47,8 +47,8 @@ phases:
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
       - printf '[{"name":"<container-name>","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
-      - kubectl apply -f ecr-docker-repo-name/deployment.yml
-      - kubectl apply -f ecr-docker-repo-name/service.yml
+      - kubectl apply -f deployment.yml
+      - kubectl apply -f service.yml
 
 artifacts:
   files: imagedefinitions.json
