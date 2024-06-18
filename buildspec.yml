@@ -13,7 +13,7 @@ phases:
       - echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
       - source ~/.bashrc
       - echo 'Check kubectl version'
-      - kubectl version --short --client
+      - kubectl version --client
   pre_build:
     commands:
       - echo Logging in to Amazon EKS...
