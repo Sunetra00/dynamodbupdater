@@ -19,4 +19,4 @@ spec:
         - name: dynamodbupdater
           image: 265083127752.dkr.ecr.ap-south-1.amazonaws.com/ecr-docker-repo-name:version-1
           ports:
-            - containerPort: 80
+            - containerPort: 8080
