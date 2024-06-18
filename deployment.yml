@@ -6,7 +6,7 @@ metadata:
   labels:
     app: dynamodbupdater
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: dynamodbupdater
@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: dynamodbupdater
-          image: 265083127752.dkr.ecr.ap-south-1.amazonaws.com/ecr-docker-repo-name:version-1
+          image: 265083127752.dkr.ecr.ap-south-1.amazonaws.com/ecr-docker-repo-name:latest
           ports:
             - containerPort: 8080
