@@ -33,12 +33,12 @@ phases:
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
 
-  # build:
-  #   commands:
-  #     - echo Build started on `date`
-  #     - echo Building the Docker image...
-  #     - mvn clean package
-  #     - docker build -t $REPOSITORY_URI:$IMAGE_TAG .
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - mvn clean package
+      - docker build -t $REPOSITORY_URI:$IMAGE_TAG .
       
   post_build:
     commands:
