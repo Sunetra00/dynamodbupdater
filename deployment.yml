@@ -18,6 +18,6 @@ spec:
       containers:
         - name: dynamodbupdater
           image: 265083127752.dkr.ecr.ap-south-1.amazonaws.com/ecr-docker-repo-name:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: always
           ports:
             - containerPort: 8080
