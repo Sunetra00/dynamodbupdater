@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Deployment
 metadata:
   name: demo
-  namespace: eksapp
+  namespace: dynamodbupdater
   labels:
     app: dynamodbupdater
 spec:
