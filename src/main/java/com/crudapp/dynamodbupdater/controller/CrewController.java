@@ -1,37 +1,53 @@
 package com.crudapp.dynamodbupdater.controller;
 
+import com.crudapp.dynamodbupdater.model.CrewDTO;
+import com.crudapp.dynamodbupdater.service.CrewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.crudapp.dynamodbupdater.dao.CrewRepository;
-import com.crudapp.dynamodbupdater.modal.CrewEntity;
-import com.crudapp.dynamodbupdater.modal.Response;
+import com.crudapp.dynamodbupdater.model.CrewEntity;
+import com.crudapp.dynamodbupdater.model.Response;
+
+import java.util.List;
 
 @RestController
 public class CrewController {
-	
-	@Autowired
-	CrewRepository crewRepository;
-	
-	@PostMapping("/crew/add")
-	ResponseEntity<Response> postcrew(@RequestBody CrewEntity crewEntity){
-		boolean status=crewRepository.saveCrew(crewEntity);
-		ResponseEntity<Response> response = buildResponse(status,crewEntity);
-		return response;
+
+	private final CrewService crewService;
+
+	public CrewController(CrewService crewService) {
+		this.crewService = crewService;
 	}
 
-	private ResponseEntity<Response> buildResponse(boolean status ,CrewEntity crewEntity) {
-		// TODO Auto-generated method stub
-		Response response=new Response();
-		response.setStatus(String.valueOf(status));
-		response.setStatusCode("200");
-		response.setEntity(crewEntity);
-		return new ResponseEntity<Response>(response, HttpStatusCode.valueOf(200));
+	@GetMapping("/crews")
+	public List<CrewDTO> getAllProducts() {
+		return crewService.getAllcrews();
 	}
-	
-	
+
+	@GetMapping("/crew/{id}")
+	public CrewDTO getCrewById(@PathVariable String id) {
+		return crewService.getCrewById(id);
+	}
+
+	@PostMapping("/crew")
+	public CrewDTO createCrew(@RequestBody CrewDTO productDTO) {
+		return crewService.createNewProduct(productDTO);
+	}
+
+	@PutMapping("/crew/{id}")
+	public CrewDTO updateCrew(@PathVariable String id, @RequestBody CrewDTO crewDTO) {
+		return crewService.updateProduct(id, crewDTO);
+	}
+
+	@DeleteMapping("/crew/{id}")
+	public void deleteProduct(@PathVariable String id) {
+		crewService.deleteProduct(id);
+	}
+
+
 }
+
+

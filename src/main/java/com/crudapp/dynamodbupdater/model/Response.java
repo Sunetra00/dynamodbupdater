@@ -1,4 +1,4 @@
-package com.crudapp.dynamodbupdater.modal;
+package com.crudapp.dynamodbupdater.model;
 
 public class Response {
 

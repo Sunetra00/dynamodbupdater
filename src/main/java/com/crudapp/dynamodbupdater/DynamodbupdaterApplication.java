@@ -7,7 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DynamodbupdaterApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DynamodbupdaterApplication.class, args);
+		SpringApplication
+				.run(DynamodbupdaterApplication.class, args);
 	}
 
 }

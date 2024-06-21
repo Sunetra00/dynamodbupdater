@@ -33,7 +33,8 @@ public class DynamoDBConfig {
 		@Bean(name = "mapperConfigProfile")
 		public DynamoDBMapperConfig buildMapperConfigForProfile() {
 	 
-			return DynamoDBMapperConfig.builder().withTableNameOverride(new TableNameOverride(profileTableName))
+			return DynamoDBMapperConfig.builder()
+//					.withTableNameOverride(new TableNameOverride(profileTableName))
 					.withSaveBehavior(SaveBehavior.UPDATE_SKIP_NULL_ATTRIBUTES).build();
 	 
 		}
