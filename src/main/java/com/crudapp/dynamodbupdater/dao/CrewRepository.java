@@ -1,6 +1,6 @@
 package com.crudapp.dynamodbupdater.dao;
 
-import com.crudapp.dynamodbupdater.model.CrewDTO;
+import com.crudapp.dynamodbupdater.dto.CrewDTO;
 import com.crudapp.dynamodbupdater.model.CrewEntity;
 
 import java.util.List;

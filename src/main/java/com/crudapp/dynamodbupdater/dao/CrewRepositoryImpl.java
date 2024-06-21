@@ -2,7 +2,7 @@ package com.crudapp.dynamodbupdater.dao;
 
 import java.util.List;
 
-import com.crudapp.dynamodbupdater.model.CrewDTO;
+import com.crudapp.dynamodbupdater.dto.CrewDTO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
