@@ -9,11 +9,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: dynamodbupdater
+      app.kubernetes.io/name: dynamodbupdater
   template:
     metadata:
       labels:
-      app: dynamodbupdater
+      app.kubernetes.io/name: dynamodbupdater
     spec:
       containers:
         - name: dynamodbupdater
