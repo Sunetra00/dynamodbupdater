@@ -12,13 +12,12 @@ spec:
       app: dynamodbupdater
   template:
     metadata:
-      labels: null
+      labels:
       app: dynamodbupdater
     spec:
       containers:
         - name: dynamodbupdater
-          image: >-
-            265083127752.dkr.ecr.ap-south-1.amazonaws.com/ecr-docker-repo-name:latest
+          image: 265083127752.dkr.ecr.ap-south-1.amazonaws.com/ecr-docker-repo-name:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
